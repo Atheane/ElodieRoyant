@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PortefolioController : MonoBehaviour
 {
@@ -40,6 +42,11 @@ public class PortefolioController : MonoBehaviour
         // associated with this preparation one can use videoPlayer.Prepare() along with
         // its prepareCompleted event.
         videoPlayer.Play();
+    }
+
+    public void OnClickButtonClose()
+    {
+        SceneManager.LoadScene("StartPage", LoadSceneMode.Single);
     }
 
     private void EndReached(UnityEngine.Video.VideoPlayer vp)
