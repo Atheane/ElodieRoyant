@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class PortefolioController : MonoBehaviour
 {
     public VideoPlayer _videoPlayer;
-    private string _videoUrl = "https://theroccob.github.io/video/video.mp4";
+    private string _videoUrl = "https://atheane.github.io/content/videos/gameplay_threejs_edtech_geometrie_ce1.mp4";
 
     public void OnClickButtonPlay()
     {
