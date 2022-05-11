@@ -56,9 +56,8 @@ namespace FM {
                     if (Mathf.Abs(scrollT.velocity.x) < 500f) {
                         if (!isSnapping) {
                             scrollT.StopMovement();
-                            snapper = StartCoroutine(Tween(contentT, new Vector2(-(selectedItem.localPosition.x - (viewWidth)), contentT.localPosition.y), 0.1f));
-                        }
-                    } else {
+                    }
+                } else {
                         scrolling = true;
                     }
                 }
@@ -78,9 +77,6 @@ namespace FM {
         }
 
         public void Next() {
-            Debug.Log("Next");
-            Debug.Log(selectedIndex);
-
             if (scrolling) {
                 return;
             }
@@ -93,9 +89,6 @@ namespace FM {
         }
 
         public void Previous() {
-            Debug.Log("Previous");
-            Debug.Log(selectedIndex);
-
             if (scrolling) {
                 return;
             }
@@ -136,6 +129,7 @@ namespace FM {
         }
 
         IEnumerator Tween(RectTransform item, Vector2 destination, float duration) {
+            print("Tween");
             isSnapping = true;
             int approxNoOfFrames = Mathf.RoundToInt(duration / Time.deltaTime);
             float posDiff = destination.x - item.localPosition.x;
