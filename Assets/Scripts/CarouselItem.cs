@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace FM{
+    [RequireComponent(typeof(Button))]
     public class CarouselItem : MonoBehaviour {
 
         private Canvas canvas;
@@ -38,6 +40,11 @@ namespace FM{
 
             InitValues();
 
+            GetComponent<Button>().onClick.AddListener(() => {
+                if(carouselView.OnItemClick != null){
+                    carouselView.OnItemClick(transform.GetSiblingIndex());
+                }
+            });
         }
 
         void OnGUI(){

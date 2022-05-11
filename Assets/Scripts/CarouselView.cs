@@ -3,8 +3,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace FM {
-    public class CarouselView : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
+namespace FM
+{
+    public class CarouselView : MonoBehaviour, IBeginDragHandler, IEndDragHandler
+    {
         public Canvas parentCanvas;
         public float maxScale = 1f;
         public float minScale = 0.7f;
@@ -27,19 +29,23 @@ namespace FM {
 
         bool scrolling;
 
-        public void OnBeginDrag(PointerEventData eventData) {
+        public void OnBeginDrag(PointerEventData eventData)
+        {
             isPressed = true;
-            if (snapper != null) {
+            if (snapper != null)
+            {
                 StopCoroutine(snapper);
                 isSnapping = false;
             }
         }
 
-        public void OnEndDrag(PointerEventData eventData) {
+        public void OnEndDrag(PointerEventData eventData)
+        {
             isPressed = false;
         }
 
-        void Start() {
+        void Start()
+        {
             scrolling = false;
             contentT = transform.Find("Viewport").Find("Content").GetComponent<RectTransform>();
             rectT = GetComponent<RectTransform>();
@@ -52,88 +58,113 @@ namespace FM {
             Init();
 
             scrollT.onValueChanged.AddListener((Vector2 value) => {
-                if (!isPressed) {
-                    if (Mathf.Abs(scrollT.velocity.x) < 500f) {
-                        if (!isSnapping) {
+                if (!isPressed)
+                {
+                    if (Mathf.Abs(scrollT.velocity.x) < 500f)
+                    {
+                        if (!isSnapping)
+                        {
                             scrollT.StopMovement();
                         }
-                    } else {
+                    }
+                    else
+                    {
                         scrolling = true;
                     }
                 }
             });
         }
 
-        void OnGUI() {
-            if (isSnapping) {
+        void OnGUI()
+        {
+            if (isSnapping)
+            {
                 return;
             }
-            if (Input.GetAxis("Horizontal") > 0) {
+            if (Input.GetAxis("Horizontal") > 0)
+            {
                 Next();
             }
-            if (Input.GetAxis("Horizontal") < 0) {
+            if (Input.GetAxis("Horizontal") < 0)
+            {
                 Previous();
             }
         }
 
-        public void Next() {
-            if (scrolling) {
+        public void Next()
+        {
+            if (scrolling)
+            {
                 return;
             }
 
-            if (selectedIndex >= contentT.childCount - 1) {
+            if (selectedIndex >= contentT.childCount - 1)
+            {
                 return;
             }
             selectedIndex++;
             Move();
         }
 
-        public void Previous() {
-            if (scrolling) {
+        public void Previous()
+        {
+            if (scrolling)
+            {
                 return;
             }
-            if (selectedIndex <= 0) {
+            if (selectedIndex <= 0)
+            {
                 return;
             }
             selectedIndex--;
             Move();
         }
 
-        public void SelectIndex(int index, bool animate) {
-            if (scrolling) {
+        public void SelectIndex(int index, bool animate)
+        {
+            if (scrolling)
+            {
                 return;
             }
-            if (index < 0 || index > contentT.childCount - 1) {
+            if (index < 0 || index > contentT.childCount - 1)
+            {
                 Debug.LogError("Index Out of Bound!");
                 return;
             }
             selectedIndex = index;
-            if (animate) {
+            if (animate)
+            {
                 Move();
-            } else {
+            }
+            else
+            {
                 SetPosition();
             }
         }
 
-        void Move() {
+        void Move()
+        {
             scrolling = true;
             selectedItem = contentT.GetChild(selectedIndex);
             scrollT.StopMovement();
             snapper = StartCoroutine(Tween(contentT, new Vector2(-(selectedItem.localPosition.x - (viewWidth)), contentT.localPosition.y), axisSlideDuration));
         }
 
-        void SetPosition() {
+        void SetPosition()
+        {
             selectedItem = contentT.GetChild(selectedIndex);
             scrollT.StopMovement();
             snapper = StartCoroutine(Tween(contentT, new Vector2(-(selectedItem.localPosition.x - (viewWidth)), contentT.localPosition.y), 0.1f));
         }
 
-        IEnumerator Tween(RectTransform item, Vector2 destination, float duration) {
+        IEnumerator Tween(RectTransform item, Vector2 destination, float duration)
+        {
             isSnapping = true;
             int approxNoOfFrames = Mathf.RoundToInt(duration / Time.deltaTime);
             float posDiff = destination.x - item.localPosition.x;
             float eachFrameProgress = posDiff / approxNoOfFrames;
-            for (int i = 0; i < approxNoOfFrames; i++) {
+            for (int i = 0; i < approxNoOfFrames; i++)
+            {
                 yield return new WaitForEndOfFrame();
                 item.localPosition = new Vector2(item.localPosition.x + eachFrameProgress, destination.y);
             }
@@ -143,11 +174,13 @@ namespace FM {
             scrolling = false;
         }
 
-        public int GetCurrentItem() {
+        public int GetCurrentItem()
+        {
             return selectedIndex;
         }
 
-        public void AddOnItemSelectedListener(System.Action<int> Callback) {
+        public void AddOnItemSelectedListener(System.Action<int> Callback)
+        {
             OnItemClick += Callback;
         }
 
