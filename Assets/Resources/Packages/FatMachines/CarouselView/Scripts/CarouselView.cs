@@ -56,8 +56,8 @@ namespace FM {
                     if (Mathf.Abs(scrollT.velocity.x) < 500f) {
                         if (!isSnapping) {
                             scrollT.StopMovement();
-                    }
-                } else {
+                        }
+                    } else {
                         scrolling = true;
                     }
                 }
@@ -129,7 +129,6 @@ namespace FM {
         }
 
         IEnumerator Tween(RectTransform item, Vector2 destination, float duration) {
-            print("Tween");
             isSnapping = true;
             int approxNoOfFrames = Mathf.RoundToInt(duration / Time.deltaTime);
             float posDiff = destination.x - item.localPosition.x;
