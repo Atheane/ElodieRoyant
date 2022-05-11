@@ -439,7 +439,7 @@ MonoBehaviour:
   parentCanvas: {fileID: 1692575778}
   maxScale: 1.2
   minScale: 0.7
-  axisSlideDuration: 0.3
+  axisSlideDuration: 0.7
   selectedIndex: 0
   selectedItem: {fileID: 0}
 --- !u!114 &382563512

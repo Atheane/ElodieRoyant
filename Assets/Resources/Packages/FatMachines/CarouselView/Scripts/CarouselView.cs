@@ -20,7 +20,7 @@ namespace FM {
         Coroutine snapper;
 
         private float viewWidth;
-        [HideInInspector] public int selectedIndex = -1;
+        [HideInInspector] public int selectedIndex = 0;
         [HideInInspector] public Transform selectedItem;
 
         [HideInInspector] public System.Action<int> OnItemClick;
@@ -78,9 +78,13 @@ namespace FM {
         }
 
         public void Next() {
+            Debug.Log("Next");
+            Debug.Log(selectedIndex);
+
             if (scrolling) {
                 return;
             }
+
             if (selectedIndex >= contentT.childCount - 1) {
                 return;
             }
@@ -89,6 +93,9 @@ namespace FM {
         }
 
         public void Previous() {
+            Debug.Log("Previous");
+            Debug.Log(selectedIndex);
+
             if (scrolling) {
                 return;
             }
