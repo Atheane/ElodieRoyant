@@ -8,15 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/StartPage.unity
+  - enabled: 0
+    path: Assets/Scenes/StartPage0.unity
     guid: fb31ba07665cf42f6993d99cc731acec
   - enabled: 0
-    path: Assets/Scenes/PortefolioDrop.unity
-    guid: 41759a36b457846b59b9882cceebbdba
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/StartPage.unity
+    guid: b937cdd4a0597448b88787170dc2c903
   - enabled: 1
     path: Assets/Scenes/Portfolio.unity
     guid: 558a5427cb0342a40bcbfa3666c8f826
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: e552702f3c00a430b859cbb030ba80af, type: 2}
-    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 6c86074eed1db4a8388a8ba40d34df52, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 8b3cefc4df04e4daf9c2e265621f113e, type: 2}

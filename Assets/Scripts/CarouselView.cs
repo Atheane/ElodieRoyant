@@ -32,6 +32,11 @@ namespace FM
         public void OnBeginDrag(PointerEventData eventData)
         {
             isPressed = true;
+            // previous selectedItem
+            PanelVideoController controller;
+            if (selectedItem.TryGetComponent<PanelVideoController>(out controller)) {
+                controller.StopVideo();
+            }
             if (snapper != null)
             {
                 StopCoroutine(snapper);
@@ -103,6 +108,7 @@ namespace FM
                 return;
             }
             selectedIndex++;
+
             Move();
         }
 

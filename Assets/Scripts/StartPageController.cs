@@ -5,6 +5,6 @@ public class StartPageController : MonoBehaviour
 {
     public void OnClickButtonPortefolio()
     {
-        SceneManager.LoadScene("ExampleScene", LoadSceneMode.Single);
+        SceneManager.LoadScene("Portfolio", LoadSceneMode.Single);
     }
 }
