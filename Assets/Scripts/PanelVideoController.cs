@@ -61,7 +61,7 @@ public class PanelVideoController : MonoBehaviour
 
     public void OnClickButtonClose()
     {
-        SceneManager.LoadScene("StartPage", LoadSceneMode.Single);
+        SceneManager.LoadScene("Start", LoadSceneMode.Single);
     }
 
 }

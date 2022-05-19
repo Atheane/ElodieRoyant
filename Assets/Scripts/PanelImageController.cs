@@ -16,7 +16,7 @@ public class PanelImageController : MonoBehaviour
 
     public void OnClickButtonClose()
     {
-        SceneManager.LoadScene("StartPage", LoadSceneMode.Single);
+        SceneManager.LoadScene("Start", LoadSceneMode.Single);
     }
 
 }
