@@ -24,7 +24,7 @@ public class TabItem : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        _tabGroup.OnTabSelected(this);
+        _tabGroup.OnTabEnter(this);
     }
 
     public void OnPointerExit(PointerEventData eventData)
