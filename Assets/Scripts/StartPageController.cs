@@ -7,4 +7,8 @@ public class StartPageController : MonoBehaviour
     {
         SceneManager.LoadScene("Portfolio", LoadSceneMode.Single);
     }
+    public void OnClickButtonAbout()
+    {
+        SceneManager.LoadScene("About", LoadSceneMode.Single);
+    }
 }
