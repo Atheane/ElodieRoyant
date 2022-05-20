@@ -15,4 +15,8 @@ public class StartPageController : MonoBehaviour
     {
         SceneManager.LoadScene("Skills", LoadSceneMode.Single);
     }
+    public void OnClickButtonTrainings()
+    {
+        SceneManager.LoadScene("Trainings", LoadSceneMode.Single);
+    }
 }
