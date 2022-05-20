@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Trainings.unity
     guid: e3a36b595ec42484294cd8c46af9370f
+  - enabled: 1
+    path: Assets/Scenes/Xp.unity
+    guid: b0c93db26bc044ec59de412da5d84f7a
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: e552702f3c00a430b859cbb030ba80af, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 8b3cefc4df04e4daf9c2e265621f113e, type: 2}
