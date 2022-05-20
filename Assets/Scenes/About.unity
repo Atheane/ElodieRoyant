@@ -1289,7 +1289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -66, y: -79}
+  m_AnchoredPosition: {x: -66, y: -86}
   m_SizeDelta: {x: 901.021, y: 59.967}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &957459543
@@ -1318,10 +1318,10 @@ MonoBehaviour:
     en ligne) et data (tracking, dashboard, algorithmes de personnalisation de parcours,
     ASR).\n\nAujourd'hui je me consacre \xE0 ma passion, le d\xE9veloppement de serious
     games sous toutes ses formes : jeux sur page web, application mobile 2D, 3D,
-    VR, mise en place du back-office, et data (tracking des donn\xE9es, personnalisation
-    de parcours avec syst\xE8me expert ou IA, dashboard). Je travaille dans le respect
-    des bonnes pratiques de d\xE9veloppement (clean code, clean architecture, DDD,
-    TDD) afin d'offrir une solution perenne."
+    VR, mise en place du back-office, et des solutions data (tracking des donn\xE9es,
+    personnalisation de parcours avec syst\xE8me expert ou IA, dashboard).\n\nJe
+    travaille dans le respect des bonnes pratiques de d\xE9veloppement (clean code,
+    clean architecture, DDD, TDD) afin d'offrir une solution perenne."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e91bc8fec5b8a494a8aead09ddd9bd40, type: 2}
   m_sharedMaterial: {fileID: 7698022749347018939, guid: e91bc8fec5b8a494a8aead09ddd9bd40, type: 2}
@@ -1384,7 +1384,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -83.04443, y: -12.604425, z: -215.19775, w: -189.06676}
+  m_margin: {x: -83.04443, y: -24.371748, z: -215.19775, w: -200.83412}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
