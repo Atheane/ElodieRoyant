@@ -32,14 +32,15 @@ public class ScrollVecticalScript : MonoBehaviour, IPointerClickHandler, IScroll
     {
         if (_scrollRect != null)
         {
-            int index = (int)Mathf.Round((1-_scrollRect.verticalNormalizedPosition) * 44);
-            print(_scrollRect.verticalNormalizedPosition);
-            print(index);
-            print(_cells.Take(index));
-            //todo put cells in correct order
-            foreach(CellController cell in _cells.Take(index))
+            int index = (int)Mathf.Round((1 - _scrollRect.verticalNormalizedPosition) * 44);
+
+            foreach(CellController cell in _cells.Where(x => x._id <= index + 4))
             {
                 cell.SetVisible();
+            }
+            foreach (CellController cell in _cells.Where(x => x._id > index + 4))
+            {
+                cell.SetInVisible();
             }
         }
     }
