@@ -1,5 +1,4 @@
 using System.Text.RegularExpressions;
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,9 +13,8 @@ public class CellController : MonoBehaviour
         try
         {
             _id = int.Parse(Regex.Match(gameObject.name, @"\d+").Value);
-        } catch(Exception e)
+        } catch
         {
-            Debug.Log(e);
         }
     }
 
