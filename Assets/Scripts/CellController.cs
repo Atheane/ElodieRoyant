@@ -16,7 +16,7 @@ public class CellController : MonoBehaviour
             _id = int.Parse(Regex.Match(gameObject.name, @"\d+").Value);
         } catch(Exception e)
         {
-            print(e);
+            Debug.Log(e);
         }
     }
 

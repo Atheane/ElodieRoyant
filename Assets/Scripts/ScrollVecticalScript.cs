@@ -8,7 +8,7 @@ using System.Linq;
 public class ScrollVecticalScript : MonoBehaviour, IPointerClickHandler, IScrollHandler
 {
     private ScrollRect _scrollRect;
-    public CellController[] _cells;
+    private CellController[] _cells;
 
     // Start is called before the first frame update
     private void Start()
